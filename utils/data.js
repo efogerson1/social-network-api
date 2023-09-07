@@ -1,7 +1,7 @@
 const users = [
     {
-        username: 'Abenezer',
-        email: 'abenezer@gmail.com',
+        username: 'John',
+        email: 'john@gmail.com',
         friends: [
             'berny',
             'leah'
@@ -15,8 +15,8 @@ const users = [
         thoughts: []
     },
     {
-        username: 'Cathy',
-        email: 'cathy@gmail.com',
+        username: 'Eric',
+        email: 'eric@gmail.com',
         friends: [],
         thoughts: []
     },

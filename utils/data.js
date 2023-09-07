@@ -25,7 +25,7 @@ const users = [
 const reactions = [
     {
         reactionBody: 'test1',
-        username: 'Abenezer'
+        username: 'John'
     },
     {
         reactionBody: 'test2',
@@ -33,7 +33,7 @@ const reactions = [
     },
     {
         reactionBody: 'test3',
-        username: 'Cathy'
+        username: 'Eric'
     },
     {
         reactionBody: 'test4',

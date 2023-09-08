@@ -2,10 +2,7 @@ const users = [
     {
         username: 'John',
         email: 'john@gmail.com',
-        friends: [
-            'berny',
-            'leah'
-        ],
+        friends: [],
         thoughts: [],
     },
     {
@@ -41,4 +38,19 @@ const reactions = [
     },
 ]
 
-module.exports = { users, reactions }
+const thoughts = [
+    {
+        thoughtText:"Cool stuff",
+        username: "John",
+        reactions: [reactions[1], reactions[2]]
+    },
+
+    {
+        thoughtText:"More cool things",
+        username: "Eric",
+        reactions: [reactions[0], reactions[3]]
+    }
+
+]
+
+module.exports = { users, reactions, thoughts }

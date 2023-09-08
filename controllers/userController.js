@@ -3,10 +3,17 @@ const {User} = require('../models');
 module.exports = {
 
 //find all users
-getUsers(req, res){
-    User.find()
-    .then((users)=>res.json(users))
-    .catch((err)=> res.status(500).json(err))
+async getUsers(req, res){
+    try { 
+        const userData = await User.find();
+        res.json(userData)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json(error)
+    }
+    // User.find()
+    // .then((users)=>res.json(users))
+    // .catch((err)=> res.status(500).json(err))
 },
 
 //find users by ID

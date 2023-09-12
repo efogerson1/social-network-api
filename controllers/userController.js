@@ -1,4 +1,4 @@
-const {User} = require('../models');
+const User = require('../models/User');
 
 module.exports = {
 
@@ -19,7 +19,9 @@ async getUsers(req, res){
 //find users by ID
 
 getSingleUser(req, res){
-    User.findOne({_id: req.params.UserId})
+    console.log(req.params)
+    console.log(req.params.userId)
+    User.findOne({_id: req.params.userId})
     .select('-__v')
     .then((user)=>
     !user
@@ -39,7 +41,7 @@ createUser(req, res){
 //update a user
 updateUser(req, res) {
     User.findOneAndUpdate(
-        {_id: req.params.UserId},
+        {_id: req.params.userId},
         {$set: req.body},
         {runValidators: true, new: true}
     )
@@ -72,7 +74,7 @@ deleteUser(req, res) {
 
 addFriend(req, res){
     User.findOneAndUpdate(
-        {_id: req.params.UserId},
+        {_id: req.params.userId},
         {$addToSet: {friends : req.params.friendId}},
         {new: true}
     )

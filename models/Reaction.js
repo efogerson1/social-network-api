@@ -15,11 +15,8 @@ const reactionSchema = new Schema(
     },
 
     username: {
-        type: Date,
-        default: Date.now,
-        get: (date) => {
-            return new Date(date).toLocaleString();
-        }
+        type: String,
+        required: true
     },
 },
 {

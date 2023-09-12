@@ -11,7 +11,7 @@ module.exports = {
 
     //Find thoughts by ID
     getThoughtById(req, res) {
-        Thought.findOne({_id: req.params.ThoughtId})
+        Thought.findOne({_id: req.params.thoughtId})
         .select('-__v')
         .then((thought)=>
         !thought
@@ -32,7 +32,7 @@ module.exports = {
             )
         })
     .then((thought)=> {
-        !user
+        !thought
             ? res.status(404).json({
                 message: 'Thought created, no user found with that ID'
             })
@@ -76,7 +76,7 @@ deleteThought(req, res) {
 createReaction(req, res){
     Thought.findOneAndUpdate(
         {_id: req.params.thoughtId},
-        {$addtoset: { reactions: req.body}},
+        {$addToSet: { reactions: req.body}},
         {runValidators: true}
     )
         .then((thought)=>
